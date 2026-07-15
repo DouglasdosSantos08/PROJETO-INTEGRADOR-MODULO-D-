@@ -1,0 +1,748 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS (Gamer Dark Mode)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0e14; /* Fundo escuro profundo */
+    color: #e2e8f0; /* Texto claro */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   BARRA SUPERIOR (NAVBAR)
+   ========================================================================== */
+.aba-superior {
+    background: linear-gradient(90deg, #131722 0%, #1a2035 100%);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #6366f1; /* Linha neon roxa */
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+}
+
+.botao-voltar {
+    color: #a5b4fc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, transform 0.2s;
+}
+
+.botao-voltar:hover {
+    color: #38bdf8; /* Muda para ciano no hover */
+    transform: translateX(-3px);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #38bdf8; /* Texto em ciano brilhante */
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL E CARTÕES (CARDS)
+   ========================================================================== */
+.auth-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.auth-card {
+    background: #131722;
+    border: 2px solid #1e293b;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito de foco gamer ao passar o mouse nos blocos */
+.auth-card:hover {
+    border-color: #6366f1;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.auth-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    border-left: 4px solid #6366f1;
+    padding-left: 12px;
+}
+
+/* ==========================================================================
+   FORMULÁRIOS E INPUTS
+   ========================================================================== */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+}
+
+.form-input {
+    background-color: #0f121d;
+    border: 2px solid #1e293b;
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Inputs brilhando ao clicar */
+.form-input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
+}
+
+
+/* ==========================================================================
+   BOTÕES REESTRUTURADOS (Com Destaque Gamer Real)
+   ========================================================================== */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.row-actions {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Estilo base definitivo para todos os botões da aplicação */
+.btn {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Botão Principal (Logar / Registrar) - Roxo Neon Intenso */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    border: 1px solid #818cf8;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.7); /* Efeito de brilho expandido */
+    transform: translateY(-2px);
+}
+
+/* Botão Secundário (Cancelar) - Cinza Escuro Estiloso */
+.btn-secondary {
+    background-color: #1e293b;
+    color: #94a3b8;
+    border: 1px solid #334155;
+}
+
+.btn-secondary:hover {
+    background-color: #334155;
+    color: #f1f5f9;
+    border-color: #475569;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.auth-container {
+    max-width: 1000px;
+    width: 100%;
+    /* Mudamos de 'auto' para definir margens manuais */
+    margin: 40px auto auto auto; /* 40px de espaço no topo, e centraliza nas laterais */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+}
+
+/* Container que agrupa os erros e impede que quebrem os inputs */
+.erros-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Caixa de cada mensagem de erro */
+.erro-mensagem {
+    background-color: rgba(239, 68, 68, 0.1); /* Vermelho bem suave transparente */
+    border-left: 4px solid #ef4444; /* Borda vermelha sólida na esquerda */
+    color: #fca5a5; /* Texto vermelho claro para contraste no fundo escuro */
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInError 0.3s ease-in-out;
+}
+
+/* Ícone de alerta antes do texto */
+.erro-icone {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* Animação suave para os erros surgirem na tela */
+@keyframes fadeInError {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Container da mensagem de sucesso */
+.sucesso-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Caixa com a mensagem de sucesso (Verde Gamer / Neon) */
+.sucesso-mensagem {
+    background-color: rgba(34, 197, 94, 0.1); /* Verde bem sutil e transparente */
+    border-left: 4px solid #22c55e; /* Borda verde sólida na esquerda */
+    color: #bbf7d0; /* Texto verde claro para dar contraste no tema escuro */
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInSuccess 0.3s ease-in-out;
+}
+
+/* Ícone de sucesso */
+.sucesso-icone {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+/* Animação suave para surgir na tela */
+@keyframes fadeInSuccess {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+/* Configurações Gerais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-body {
+    background-color: #0b0e14;
+    color: #ffffff;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Navbar / Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    items-content: center;
+    align-items: center;
+    padding: 1.25rem 2.5rem;
+    background-color: #0f131a;
+    border-bottom: 1px solid #1f2937;
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #6366f1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.nav-link.active {
+    color: #818cf8;
+    font-weight: 600;
+    border-bottom: 2px solid #6366f1;
+    padding-bottom: 0.25rem;
+}
+
+.btn-auth {
+    background-color: #4f46e5;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-auth:hover {
+    background-color: #6366f1;
+}
+
+/* Containers Principais */
+.main-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+.main-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    color: #6366f1;
+}
+
+.main-subtitle {
+    color: #9ca3af;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* Grid de Jogos */
+.games-grid {
+    display: grid;
+    grid-template-cols: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* Media Queries para Responsividade do Grid (Equivalente ao md: e lg:) */
+@media (min-width: 768px) {
+    .games-grid {
+        grid-template-cols: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .games-grid {
+        grid-template-cols: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Card do Jogo */
+.game-card {
+    background-color: #121824;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #1f2937;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Efeito de Hover no Card (Zoom na Imagem) */
+.image-wrapper {
+    overflow: hidden;
+    height: 10rem;
+}
+
+.game-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.game-card:hover .game-image {
+    transform: scale(1.05);
+}
+
+/* Selo de Desconto */
+.discount-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: #22c55e;
+    color: #000000;
+    font-size: 0.75rem;
+    font-weight: 900;
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-10: 10;
+}
+
+/* Conteúdo Interno do Card */
+.card-content {
+    padding: 1.25rem;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-meta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #818cf8;
+}
+
+.game-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+    color: #f3f4f6;
+}
+
+/* Preços e Botões */
+.price-section {
+    margin-top: 1rem;
+}
+
+.old-price {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-decoration: line-through;
+}
+
+.current-price {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #4ade80;
+}
+
+.btn-buy {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.625rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-buy:hover {
+    background-color: #6366f1;
+}
+
+/* Mensagem de Erro/Nenhum Jogo */
+.no-promotions {
+    color: #9ca3af;
+    grid-column: span 4 / span 4;
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+/* Footer */
+.main-footer {
+    border-top: 1px solid #1f2937;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+    
+
+}
+
+/* Definições Gerais da Página de Produto */
+.body-store {
+    background-color: #030712; /* gray-950 */
+    color: #f3f4f6; /* gray-100 */
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header-store {
+    background-color: #111827; /* gray-900 */
+    border-bottom: 1px solid #1f2937; /* gray-800 */
+}
+.header-container {
+    max-w-7xl: 1280px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-store {
+    font-size: 24px;
+    font-weight: bold;
+    color: #818cf8; /* indigo-400 */
+    text-decoration: none;
+}
+.logo-store span {
+    color: #ffffff;
+}
+.btn-voltar {
+    font-size: 14px;
+    color: #9ca3af; /* gray-400 */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.btn-voltar:hover {
+    color: #ffffff;
+}
+
+/* Layout do Painel do Produto */
+.main-product-container {
+    flex-grow: 1;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.product-card-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    background-color: #111827; /* gray-900 */
+    border: 1px solid #1f2937; /* gray-800 */
+    border-radius: 16px;
+    padding: 32px;
+    width: 100%;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+    .product-card-detail {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Lado Esquerdo - Imagem */
+.product-image-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #1f2937;
+    background-color: #030712;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-img-large {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+    display: block;
+}
+
+/* Lado Direito - Informações */
+.product-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-badge {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #818cf8;
+    background-color: rgba(129, 140, 248, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+.product-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 16px 0 8px 0;
+}
+.product-status {
+    font-size: 12px;
+    color: #34d399; /* emerald-400 */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 24px 0;
+}
+.status-pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+}
+.product-description {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Bloco de Preço */
+.product-price-box {
+    background-color: rgba(3, 7, 18, 0.4);
+    border: 1px solid #1f2937;
+    padding: 20px;
+    border-radius: 12px;
+}
+.price-label-group {
+    margin-bottom: 16px;
+}
+.price-text-sm {
+    font-size: 12px;
+    color: #6b7280;
+    display: block;
+}
+.price-text-main {
+    font-size: 30px;
+    font-weight: 900;
+    color: #818cf8;
+}
+.btn-finalize-order {
+    width: 100%;
+    background-color: #4f46e5; /* indigo-600 */
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.btn-finalize-order:hover {
+    background-color: #4338ca; /* indigo-700 */
+}
+.btn-finalize-order:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+.footer-store {
+    border-top: 1px solid #1f2937;
+    padding: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Botão Voltar com Destaque Gamer */
+.btn-voltar {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff; /* Texto branco para dar contraste */
+    text-decoration: none;
+    background-color: #4f46e5; /* O mesmo azul/indigo do botão de finalizar */
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid #6366f1; /* Borda levemente mais clara para dar brilho */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3); /* Neon azul suave no fundo */
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* Efeito Hover Gamer */
+.btn-voltar:hover {
+    background-color: #4338ca; /* Azul um pouco mais escuro ao passar o mouse */
+    border-color: #4f46e5;
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5); /* Neon brilha mais forte */
+    transform: translateX(-4px); /* Deslocamento suave para a esquerda */
+}
+
+/* Efeito de Clique */
+.btn-voltar:active {
+    transform: translateX(-2px) scale(0.98);
+}
